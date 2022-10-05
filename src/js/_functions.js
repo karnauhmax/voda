@@ -29,14 +29,6 @@
 // Реализация включения скролла (не забудьте вызвать функцию)
 // import { enableScroll } from './functions/enable-scroll';
 
-// Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
-
-// Реализация табов
-// import GraphTabs from 'graph-tabs';
-// const tabs = new GraphTabs('tab');
-
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
 // import { getHeaderHeight } from './functions/header-height';
 
@@ -84,3 +76,18 @@
 // };
 
 // validateForms('.form-1', rules1, afterForm);
+
+// Подключение ООП модалок
+// import Modal from "./functions/modals";
+
+//Подключение ООП табов
+// import Tab from "./functions/tabs";
+
+// burger
+// import { burger } from "./functions/burger";
+
+// splide
+// import Splide from "@splidejs/splide";
+
+// dynamic adapt
+// import DynamicAdapt from "./functions/dynamicAdapt";
