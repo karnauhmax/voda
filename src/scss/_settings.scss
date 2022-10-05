@@ -35,7 +35,7 @@ li {
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family-primary, sans-serif);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -44,8 +44,9 @@ li {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
-  font-size: 16px;
-  font-family: var(--font-family, sans-serif);
+  font-size: 18px;
+  @include line-height(18, 26);
+  font-family: var(--font-family-primary, sans-serif);
 }
 
 img {
@@ -57,6 +58,14 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extrabold {
+  font-weight: 800;
 }
 
 .site-container {
@@ -95,7 +104,7 @@ a {
 
 .container {
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: var(--container-width);
   padding: 0 20px;
 }
 
@@ -142,4 +151,19 @@ a {
 
 .locked {
   overflow: hidden;
+}
+
+.section-title {
+  font-family: var(--font-family-secondary);
+  @include adaptiv-value(font-size, 50, 24, 1);
+  font-weight: 700;
+  @include line-height(50, 69);
+}
+
+.bordered-left-img {
+  border-radius: 0px 100px 100px 100px;
+}
+
+.bordered-right-img {
+  border-radius: 100px 0px 100px 100px;
 }
