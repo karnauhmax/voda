@@ -51,7 +51,6 @@
     }
 
     @media screen and (max-width: 992px) {
-      @include adaptiv-value(margin-bottom, 25, 15, 1);
       transform-origin: 50% 120%;
     }
 

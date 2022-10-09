@@ -1,5 +1,23 @@
 .info {
   margin-top: -60px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 475px;
+    height: 527px;
+    background: rgba(18, 149, 238, 0.5);
+    filter: blur(150px);
+    position: absolute;
+    left: 0;
+    top: 20%;
+    transform: translateX(-40%);
+    z-index: -1;
+
+    @media screen and (max-width: 1440px) {
+      display: none;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     padding-top: 30px;
@@ -73,6 +91,10 @@
       @media screen and (max-width: 767px) {
         text-align: center;
       }
+
+      @media screen and (max-width: 360px) {
+        text-align: left;
+      }
     }
 
     &-num {
@@ -127,13 +149,20 @@
     box-shadow: 0px 4px 18px rgba(148, 213, 253, 0.3),
       0px 1px 40px rgba(206, 236, 255, 0.2);
     backdrop-filter: blur(52px);
+    margin-bottom: 90px;
 
     @media screen and (max-width: 1366px) {
-      padding: 65px 75px
+      padding: 65px 75px;
+      margin-bottom: 80pz;
     }
 
     @media screen and (max-width: 768px) {
       padding: 41px 75px;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding: 41px 10px;
+      margin-bottom: 25px;
     }
 
     &-inner {
@@ -150,17 +179,37 @@
       @media screen and (max-width: 768px) {
         row-gap: 30px;
       }
+
+      @media screen and (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media screen and (max-width: 359px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &-title {
       text-align: center;
       margin-bottom: 60px;
+
+      @media screen and (max-width: 576px) {
+        font-size: 24px;
+        max-width: 200px;
+        margin: 0 auto 30px auto;
+      }
     }
 
     &-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      grid-auto-flow: row;
+      justify-items: center;
+      align-self: start;
+      gap: 15px;
+
+      @media screen and (max-width: 576px) {
+        gap: 10px;
+      }
     }
 
 
@@ -171,7 +220,6 @@
       height: 60px;
       border-radius: 5px;
       background-color: grey;
-      margin-bottom: 20px;
     }
 
     &-text {
@@ -180,6 +228,178 @@
 
       @media screen and (max-width: 1366px) {
         font-size: 22px;
+      }
+
+      @media screen and (max-width: 576px) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: 360px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__stages {
+    margin-bottom: 90px;
+
+    &-inner {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      @include adaptiv-value(gap, 120, 30, 1);
+
+      @media screen and (max-width: 992px) {
+        grid-template-columns: auto;
+      }
+    }
+
+    &-info {
+      grid-column: 7 / 13;
+      padding-top: 17px;
+
+      @media screen and (max-width: 992px) {
+        grid-column: unset;
+        padding-top: 0;
+      }
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-bottom: 36px;
+
+      @media screen and (max-width: 576px) {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &-img {
+      padding-bottom: 125%;
+      grid-column: 1 / 7;
+      position: relative;
+      z-index: 2;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(50%) translateX(5%);
+        z-index: -1;
+      }
+
+      @media screen and (max-width: 992px) {
+        padding-bottom: 51%;
+        grid-column: unset;
+      }
+
+      @media screen and (max-width: 360px) {
+        display: none;
+      }
+
+      & img {}
+    }
+
+    &-list {
+      display: grid;
+      grid-auto-flow: row;
+      gap: 23px;
+      position: relative;
+      counter-reset: counter;
+
+      @media screen and (max-width: 576px) {
+        gap: 10px;
+      }
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: 95%;
+        border: 1px dashed #9CD5FF;
+        left: 15px;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 45px;
+
+      &::before {
+        content: counter(counter);
+        counter-increment: counter;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        font-weight: 600;
+        font-size: 16px;
+        left: 0;
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        box-shadow: 0px 3px 5px rgba(40, 165, 246, 0.2);
+      }
+    }
+
+    &-filtration::before {
+      background-color: #D2EDFF;
+    }
+
+    &-adsorbation::before {
+      background-color: #B5E0FD;
+    }
+
+    &-aeration::before {
+      background-color: #A9DCFF;
+    }
+
+    &-softening::before {
+      background-color: #93D3FF;
+    }
+
+    &-deep::before {
+      background-color: #77C8FF;
+    }
+
+    &-conditioning::before {
+      background-color: #59BCFF;
+    }
+
+    &-mineralization::before {
+      background-color: #39A9F4;
+    }
+
+    &-structurization::before {
+      background-color: #39A9F4;
+    }
+
+    &-cleaning::before {
+      background-color: #0098FF;
+    }
+
+    &-decontamination::before {
+      background-color: #09BEF8;
+    }
+
+    &-text {
+      font-size: 18px;
+      @include line-height(18, 30);
+      max-width: 587px;
+
+      @media screen and (max-width: 576px) {
+        font-size: 16px;
+        max-width: 280px;
+      }
+
+      & strong {
+        font-weight: 600;
       }
     }
   }
