@@ -1,0 +1,173 @@
+.offer {
+  background-image: url("../img/offer-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include adaptiv-value(padding-top, 125, 51, 1);
+  @include adaptiv-value(padding-bottom, 320, 40, 1);
+
+  @media screen and (max-width: 1366px) {
+    @include adaptiv-value(padding-bottom, 120, 50, 1);
+  }
+
+  @media screen and (max-width: 992px) {
+    background-position: center center;
+  }
+
+  @media screen and (max-width: 768px) {
+    @include adaptiv-value(margin-bottom, 50, 20, 1);
+  }
+
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 30px;
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__img {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    grid-column: 7 / 13;
+    transform: scale(1.6);
+    transform-origin: 50% 30%;
+    align-self: start;
+
+    @media screen and (max-width: 1600px) {
+      transform: scale(1.3);
+    }
+
+    @media screen and (max-width: 1366px) {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 1200px) {
+      transform: scale(1);
+    }
+
+    @media screen and (max-width: 992px) {
+      @include adaptiv-value(margin-bottom, 25, 15, 1);
+      transform-origin: 50% 120%;
+    }
+
+    @media screen and (max-width: 768px) {
+      align-self: end;
+
+    }
+
+    @media screen and (max-width: 576px) {
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 360px) {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 7;
+    padding-top: 70px;
+    z-index: 40;
+
+    @media screen and (max-width: 1366px) {
+      padding-top: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-column: unset;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family-secondary);
+    font-weight: 700;
+    @include adaptiv-value(font-size, 160, 50, 1);
+    @include line-height(160, 144);
+    color: var(--white);
+    @include adaptiv-value(margin-bottom, 28, 14, 1);
+
+    @media screen and (max-width: 1600px) {
+      font-size: 110px;
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: 80px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 45px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 359px) {
+      font-size: 35px;
+    }
+
+    & span {
+      @include adaptiv-value(font-size, 110, 40, 1);
+      @include line-height(110, 144);
+
+      @media screen and (max-width: 1600px) {
+        font-size: 80px;
+      }
+
+      @media screen and (max-width: 992px) {
+        font-size: 60px;
+      }
+
+      @media screen and (max-width: 576px) {
+        font-size: 50px;
+      }
+
+      @media screen and (max-width: 359px) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 539px;
+    @include adaptiv-value(font-size, 24, 16, 1);
+    @include line-height(24, 33);
+    @include adaptiv-value(margin-bottom, 30, 15, 1);
+    color: var(--white);
+    font-weight: 600;
+
+    @media screen and (max-width: 1600px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 1366px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 576px) {
+      max-width: 300px;
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+
+    @media screen and (max-width: 767px) {
+      min-width: unset;
+      max-width: unset;
+      width: 100%;
+    }
+  }
+}
