@@ -213,15 +213,6 @@
     }
 
 
-
-    &-img {
-      //temp
-      width: 60px;
-      height: 60px;
-      border-radius: 5px;
-      background-color: grey;
-    }
-
     &-text {
       font-size: 24px;
       text-align: center;
@@ -246,10 +237,15 @@
     &-inner {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      @include adaptiv-value(gap, 120, 30, 1);
+      @include adaptiv-value(gap, 102, 30, 1);
 
       @media screen and (max-width: 992px) {
         grid-template-columns: auto;
+        gap: 70px;
+      }
+
+      @media screen and (max-width: 576px) {
+        gap: 0;
       }
     }
 
@@ -267,15 +263,26 @@
       font-size: 24px;
       margin-bottom: 36px;
 
+      @media screen and (max-width: 992px) {
+        max-width: 570px;
+      }
+
       @media screen and (max-width: 576px) {
         font-size: 18px;
         margin-bottom: 16px;
       }
     }
 
+    &-media {
+      grid-column: 1 / 7;
+
+      @media screen and (max-width: 992px) {
+        grid-column: unset;
+      }
+    }
+
     &-img {
       padding-bottom: 125%;
-      grid-column: 1 / 7;
       position: relative;
       z-index: 2;
       position: relative;
@@ -283,25 +290,39 @@
       &::after {
         content: "";
         width: 100%;
-        height: 100%;
-        background-color: var(--white);
+        height: 87%;
+        background-color: var(--accent-decor);
         position: absolute;
         bottom: 0;
         right: 0;
-        transform: translateY(50%) translateX(5%);
+        transform: translateY(2%) translateX(5%);
         z-index: -1;
+        box-shadow: 0px 4px 84px rgba(73, 178, 255, 0.3);
+        border-radius: 5px;
+
+        @media screen and (max-width: 992px) {
+          transform: translateX(0) translateY(10%);
+        }
+
+        @media screen and (max-width: 768px) {
+          max-width: 684px;
+        }
       }
 
       @media screen and (max-width: 992px) {
         padding-bottom: 51%;
-        grid-column: unset;
       }
 
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 576px) {
         display: none;
       }
 
-      & img {}
+      & img {
+        @media screen and (max-width: 768px) {
+          max-width: 680px;
+        }
+      }
+
     }
 
     &-list {
@@ -323,12 +344,16 @@
         left: 15px;
         position: absolute;
         z-index: -1;
+
+        @media screen and (max-width: 576px) {
+          height: 90%;
+        }
       }
     }
 
     &-item {
       position: relative;
-      padding-left: 45px;
+      padding-left: 55px;
 
       &::before {
         content: counter(counter);
