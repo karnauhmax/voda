@@ -1,0 +1,64 @@
+.service {
+  margin-bottom: 100px;
+
+  &__item {
+    min-height: 459px;
+    border-radius: 15px;
+    background-color: var(--accent);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/service-bg.jpg");
+
+
+    @media screen and (max-width: 992px) {
+      min-height: 390px;
+    }
+
+    @media screen and (max-width: 576px) {
+      min-height: 223px;
+    }
+  }
+
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: var(--font-family-secondary);
+    font-size: 90px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1366px) {
+      font-size: 70px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 36px;
+    }
+  }
+
+  &__text {
+    font-size: 50px;
+    max-width: 800px;
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+
+    @media screen and (max-width: 1366px) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+}

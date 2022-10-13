@@ -44,13 +44,12 @@
     margin-bottom: 103px;
 
     @media screen and (max-width: 1366px) {
-      margin-bottom: 80px;
+      margin-bottom: 95px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 576px) {
       margin-bottom: 60px;
     }
-
 
 
     &-inner {
@@ -232,7 +231,7 @@
   }
 
   &__stages {
-    margin-bottom: 90px;
+    margin-bottom: 100px;
 
     &-inner {
       display: grid;
@@ -370,6 +369,7 @@
         align-items: center;
         color: var(--white);
         box-shadow: 0px 3px 5px rgba(40, 165, 246, 0.2);
+        background-repeat: no-repeat;
       }
     }
 
@@ -410,7 +410,13 @@
     }
 
     &-decontamination::before {
-      background-color: #09BEF8;
+      width: 43px;
+      height: 60px;
+      background-image: url("../img/small-teardrop.svg");
+      border-radius: 0;
+      box-shadow: unset;
+      padding-top: 10px;
+      transform: translateX(-6px);
     }
 
     &-text {
@@ -420,7 +426,7 @@
 
       @media screen and (max-width: 576px) {
         font-size: 16px;
-        max-width: 280px;
+        max-width: 100%;
       }
 
       & strong {

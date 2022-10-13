@@ -47,7 +47,8 @@ li {
   font-size: 18px;
   @include line-height(18, 26);
   font-family: var(--font-family-primary, sans-serif);
-  background-color: #E8F5FE;
+  background-color: var(--light-bg);
+  color: var(--text);
 }
 
 img {

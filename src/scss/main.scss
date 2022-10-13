@@ -6,7 +6,13 @@
 @import "settings";
 @import "offer";
 @import "info";
+@import "reasons";
+@import "income";
+@import "service";
+@import "benefits";
+@import "partners";
 
 
 // подключения компонентов страницы
 @import "./components/header";
+@import "./components/modal";

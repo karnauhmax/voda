@@ -3,15 +3,13 @@ class Modal {
     this.modalContainer = document.querySelector(modalContainer);
     this.modalOpen = document.querySelectorAll(modalOpen);
     this.modalClose = document.querySelectorAll("[data-modal-close]");
-    this.modalWrapper = this.modalContainer.querySelector(".modal__wrapper");
+    this.modalWrapper = this.modalContainer.querySelector(".modal__inner");
   }
 
   renderModal() {
-    console.log();
     const openModal = () => {
       this.modalContainer.classList.add("modal__active");
       document.body.classList.add("locked");
-      console.log(123);
     };
 
     const closeModal = () => {
