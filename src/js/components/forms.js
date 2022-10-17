@@ -2,7 +2,7 @@ import { validateForms } from "../functions/validate-forms";
 
 const rules1 = [
   {
-    ruleSelector: ".modal__name",
+    ruleSelector: ".contact__name",
     rules: [
       {
         rule: "minLength",
@@ -16,7 +16,7 @@ const rules1 = [
     ],
   },
   {
-    ruleSelector: ".modal__phone",
+    ruleSelector: ".contact__phone",
     tel: true,
     telError: "Введите корректный телефон",
     rules: [
@@ -33,4 +33,4 @@ const afterForm = () => {
   console.log("Произошла отправка, тут можно писать любые действия");
 };
 
-validateForms(".modal__form", rules1, afterForm);
+validateForms(".main-form", rules1, afterForm);

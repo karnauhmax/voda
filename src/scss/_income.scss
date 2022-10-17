@@ -38,7 +38,7 @@
     grid-auto-flow: row;
     grid-template-rows: min-content max-content;
     gap: 10px;
-    border-radius: 15px;
+    border-radius: var(--radius-15);
     padding: 115px 30px 30px 30px;
     min-height: 320px;
     position: relative;

@@ -1,9 +1,14 @@
 .service {
   margin-bottom: 100px;
 
+  @media screen and (max-width: 992px) {
+    margin-bottom: 45px;
+  }
+
   &__item {
     min-height: 459px;
-    border-radius: 15px;
+    border-radius: var(--radius-15);
+    padding: 15px;
     background-color: var(--accent);
     background-repeat: no-repeat;
     background-size: cover;

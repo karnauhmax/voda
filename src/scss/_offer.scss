@@ -1,5 +1,6 @@
 .offer {
   background-image: url("../img/offer-bg.jpg");
+  background-color: var(--accent);
   background-repeat: no-repeat;
   background-size: cover;
   @include adaptiv-value(padding-top, 125, 51, 1);

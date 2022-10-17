@@ -1,0 +1,37 @@
+.gallery {
+  margin-bottom: 100px;
+
+  &__img {
+    padding-bottom: 107%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--radius-15);
+
+    @media screen and (max-width: 992px) {
+      padding-bottom: 50%;
+    }
+
+    & img {
+      border-radius: var(--radius-15);
+      transition: transform .5s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
+  }
+
+  &__slider {
+    display: none;
+
+    @media screen and (max-width: 992px) {
+      display: block;
+    }
+  }
+}

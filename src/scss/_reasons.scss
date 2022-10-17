@@ -7,6 +7,10 @@
     margin-bottom: 70px;
   }
 
+  @media screen and (max-width: 576px) {
+    padding-top: 50px;
+  }
+
   &__title {
     text-align: center;
     max-width: 807px;
@@ -165,11 +169,6 @@
 
     @media screen and (max-width: 992px) {
       font-size: 16px;
-      max-width: 273px;
-    }
-
-    @media screen and (max-width: 767px) {
-      max-width: 100%;
     }
   }
 

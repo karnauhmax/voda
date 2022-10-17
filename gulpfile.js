@@ -53,37 +53,39 @@ const clean = () => {
 
 //svg sprite
 const svgSprites = () => {
-  return src(paths.srcSvg)
-    .pipe(
-      svgmin({
-        js2svg: {
-          pretty: true,
-        },
-      })
-    )
-    .pipe(
-      cheerio({
-        run: function ($) {
-          $("[fill]").removeAttr("fill");
-          $("[stroke]").removeAttr("stroke");
-          $("[style]").removeAttr("style");
-        },
-        parserOptions: {
-          xmlMode: true,
-        },
-      })
-    )
-    .pipe(replace("&gt;", ">"))
-    .pipe(
-      svgSprite({
-        mode: {
-          stack: {
-            sprite: "../sprite.svg",
+  return (
+    src(paths.srcSvg)
+      .pipe(
+        svgmin({
+          js2svg: {
+            pretty: true,
           },
-        },
-      })
-    )
-    .pipe(dest(paths.buildImgFolder));
+        })
+      )
+      // .pipe(
+      //   cheerio({
+      //     run: function ($) {
+      //       $("[fill]").removeAttr("fill");
+      //       $("[stroke]").removeAttr("stroke");
+      //       $("[style]").removeAttr("style");
+      //     },
+      //     parserOptions: {
+      //       xmlMode: true,
+      //     },
+      //   })
+      // )
+      .pipe(replace("&gt;", ">"))
+      .pipe(
+        svgSprite({
+          mode: {
+            stack: {
+              sprite: "../sprite.svg",
+            },
+          },
+        })
+      )
+      .pipe(dest(paths.buildImgFolder))
+  );
 };
 
 // scss styles
@@ -376,7 +378,7 @@ exports.default = series(
   resources,
   images,
   webpImages,
-  avifImages,
+  // avifImages,
   svgSprites,
   watchFiles
 );
@@ -389,7 +391,7 @@ exports.backend = series(
   resources,
   images,
   webpImages,
-  avifImages,
+  // avifImages,
   svgSprites
 );
 
@@ -402,7 +404,7 @@ exports.build = series(
   resources,
   images,
   webpImages,
-  avifImages,
+  // avifImages,
   svgSprites,
   htmlMinify
 );

@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
+    "@splidejs/splide-extension-grid": "^0.4.1",
     "bootstrap-icons": "^1.8.1",
     "graph-modal": "^1.0.3",
     "graph-tabs": "^1.0.0",

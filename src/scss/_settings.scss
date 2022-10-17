@@ -172,17 +172,25 @@ a {
 
 .bordered-left-img {
   border-radius: 0px 100px 100px 100px;
+
+  @media screen and (max-width: 576px) {
+    border-radius: 0px 50px 50px 50px;
+  }
 }
 
 .bordered-right-img {
   border-radius: 100px 0px 100px 100px;
+
+  @media screen and (max-width: 576px) {
+    border-radius: 50px 0 50px 50px;
+  }
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: var(--radius-15);
   font-weight: 700;
   padding: 24px 10px;
   min-width: 300px;
@@ -191,6 +199,11 @@ a {
   @include adaptiv-value(font-size, 16, 14, 1);
   @include line-height(16, 24);
   transition: .5s ease;
+  box-shadow: 0px 6px 15px rgba(34, 55, 131, 0.4);
+
+  &:hover {
+    box-shadow: 0px 6px 15px rgba(0, 110, 255, 0.4);
+  }
 
   @media screen and (max-width: 1600px) {
     padding: 18px 10px;
@@ -200,11 +213,11 @@ a {
 
 .light-btn {
   background-color: var(--white);
-  box-shadow: 0px 6px 15px rgba(34, 55, 131, 0.4);
+}
 
-  &:hover {
-    box-shadow: 0px 6px 15px rgba(0, 110, 255, 0.4);
-  }
+.dark-btn {
+  background-color: var(--btn-primary);
+  color: var(--white);
 }
 
 .icon {

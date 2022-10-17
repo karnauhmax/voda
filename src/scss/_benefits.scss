@@ -1,22 +1,46 @@
 .benefits {
   margin-bottom: 125px;
 
+  @media screen and (max-width: 992px) {
+    margin-bottom: 70px;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 60px;
+  }
+
+  &__btn {
+    @media screen and (max-width: 576px) {
+      min-width: unset;
+      max-width: unset;
+      width: 100%;
+    }
+  }
+
   &__wrapper {
     display: grid;
     row-gap: 40px;
+
+    @media screen and (max-width: 768px) {
+      row-gap: 0;
+    }
   }
 
   &__inner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-
-    // @media screen and (max-width: 1200px) {
-    //   grid-template-columns: auto;
-    // }
   }
 
   .inner-top {
     @include adaptiv-value(column-gap, 135, 0, 1);
+
+    @media screen and (max-width: 1200px) {
+      column-gap: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+    }
   }
 
   .inner-bottom {
@@ -25,15 +49,34 @@
     @media screen and (max-width: 1600px) {
       column-gap: 40px;
     }
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: auto;
+      row-gap: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      row-gap: unset;
+    }
   }
 
   &__info-left {
     grid-column: 1 / 7;
+    grid-row: 1;
     padding-top: 70px;
 
     @media screen and (max-width: 1200px) {
+      grid-row: 1 / 2;
+      padding-top: 0;
       grid-column: unset;
-      order: -1;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: 576px) {
+      margin-bottom: 20px;
     }
   }
 
@@ -42,6 +85,7 @@
     padding-top: 100px;
 
     @media screen and (max-width: 1200px) {
+      padding-top: 0;
       grid-column: unset;
     }
   }
@@ -55,9 +99,23 @@
       max-width: 500px;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
       grid-column: unset;
-      max-width: 100%;
+      max-width: 593px;
+      padding-bottom: 100%;
+      transform: translateX(5%);
+      margin-bottom: 90px;
+    }
+
+    @media screen and (max-width: 576px) {
+      transform: translateX(0);
+      justify-self: center;
+      padding-bottom: 115%;
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 360px) {
+      max-width: 288px;
     }
 
     &::after {
@@ -73,12 +131,12 @@
       box-shadow: 0px 4px 84px rgba(73, 178, 255, 0.3);
       border-radius: 5px;
 
-      @media screen and (max-width: 992px) {
-        transform: translateX(0) translateY(10%);
+      @media screen and (max-width: 1200px) {
+        display: none;
       }
 
       @media screen and (max-width: 768px) {
-        max-width: 684px;
+        display: block;
       }
     }
   }
@@ -93,7 +151,10 @@
     }
 
     @media screen and (max-width: 1200px) {
-      grid-column: unset;
+      grid-row: 1 / 2;
+    }
+
+    @media screen and (max-width: 768px) {
       display: none;
     }
 
@@ -110,12 +171,8 @@
       box-shadow: 0px 4px 84px rgba(73, 178, 255, 0.3);
       border-radius: 5px;
 
-      @media screen and (max-width: 992px) {
-        transform: translateX(0) translateY(10%);
-      }
-
-      @media screen and (max-width: 768px) {
-        max-width: 684px;
+      @media screen and (max-width: 1200px) {
+        display: none;
       }
     }
   }
@@ -129,22 +186,47 @@
   &__title {
     @include line-height(50, 60);
     margin-bottom: 35px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 50px;
+      max-width: 620px;
+    }
+
+    @media screen and (max-width: 576px) {
+      text-align: center;
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: 360px) {
+      font-size: 24px;
+    }
   }
 
   &__list {
     display: grid;
     grid-auto-flow: row;
     row-gap: 30px;
-
-    &:last-of-type {
-      margin-bottom: 35px;
-    }
   }
 
   &__item {
     display: grid;
     grid-template-columns: 60px 1fr;
     gap: 32px;
+
+    @media screen and (max-width: 576px) {
+      gap: 10px;
+      grid-template-columns: 40px 1fr;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .icon svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 
   &__text {
@@ -155,5 +237,13 @@
     @media screen and (max-width: 1200px) {
       max-width: 100%;
     }
+
+    @media screen and (max-width: 576px) {
+      font-size: 16px;
+    }
   }
+}
+
+.bottom-list {
+  margin-bottom: 35px;
 }
