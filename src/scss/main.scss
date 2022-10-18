@@ -14,8 +14,9 @@
 @import "contact";
 @import "gallery";
 @import "reviews";
-
+@import "network";
 
 // подключения компонентов страницы
 @import "./components/header";
 @import "./components/modal";
+@import "./components/footer";

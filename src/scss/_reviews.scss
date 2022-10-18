@@ -4,6 +4,14 @@
   @include adaptiv-value(margin-bottom, 100, 20, 1);
   background: linear-gradient(180deg, #088AE9 0%, #20A6F7 36.36%, #97CDFA 80.45%, #E8F5FE 97.82%);
 
+  @media screen and (max-width: 992px) {
+    margin-bottom: 90px;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 60px;
+  }
+
   &__title {
     text-align: center;
     max-width: 685px;
@@ -86,6 +94,11 @@
 
   &__btn {
     margin: 0 auto;
+
+    @media screen and (max-width: 360px) {
+      min-width: unset;
+      width: 100%;
+    }
   }
 
   &__bottom {

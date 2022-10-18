@@ -1,0 +1,100 @@
+.footer {
+  @include adaptiv-value(padding-top, 90, 20, 1);
+  @include adaptiv-value(padding-bottom, 40, 20, 1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/footer-bg.jpg");
+
+  &__title {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 37px;
+  }
+
+  &__link {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 29px 20px;
+    font-family: var(--font-family-secondary);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    border: 1px solid var(--white);
+    min-width: 250px;
+    max-width: 350px;
+    border-radius: var(--radius-15);
+    box-shadow: 0px 4px 18px rgba(148, 213, 253, 0.3),
+      0px 1px 40px rgba(206, 236, 255, 0.2);
+    backdrop-filter: blur(52px);
+    transition: filter .5s ease;
+
+    &:hover {
+      filter: drop-shadow(0px 1px 14px rgba(49, 50, 51, 0.5));
+    }
+
+    @media screen and (max-width: 1366px) {
+      width: 100%;
+      min-width: unset;
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+
+    &-geo {
+      grid-template-columns: 25px 1fr;
+      text-align: center;
+      max-width: 100%;
+
+      @media screen and (max-width: 1366px) {
+        grid-column: span 3;
+        grid-row: 2/3;
+        justify-self: center;
+        max-width: 500px;
+        order: -1;
+      }
+
+      @media screen and (max-width: 767px) {
+        grid-column: span 2;
+        grid-row: 3/4;
+      }
+    }
+
+    &-phone {
+      @media screen and (max-width: 767px) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(350px, auto) auto auto 1fr;
+    gap: 30px;
+    @include adaptiv-value(margin-bottom, 70, 30, 1);
+    align-items: start;
+
+    @media screen and (max-width: 1366px) {
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  &__info {
+    padding-top: 40px;
+    border-top: 1px solid var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-family-secondary);
+    color: var(--white);
+    text-align: center;
+  }
+}

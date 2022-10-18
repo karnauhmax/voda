@@ -198,7 +198,7 @@ a {
   font-family: var(--font-family-secondary);
   @include adaptiv-value(font-size, 16, 14, 1);
   @include line-height(16, 24);
-  transition: .5s ease;
+  transition: .2s ease;
   box-shadow: 0px 6px 15px rgba(34, 55, 131, 0.4);
 
   &:hover {

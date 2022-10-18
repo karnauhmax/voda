@@ -23,6 +23,8 @@ if (document.querySelector(".income__slider")) {
     pagination: false,
     padding: { right: "150px" },
     gap: "30px",
+    autoplay: true,
+    speed: 1000,
     breakpoints: {
       1366: {
         perPage: 3,

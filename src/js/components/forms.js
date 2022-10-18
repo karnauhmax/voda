@@ -34,3 +34,4 @@ const afterForm = () => {
 };
 
 validateForms(".main-form", rules1, afterForm);
+validateForms(".modal__form", rules1, afterForm);

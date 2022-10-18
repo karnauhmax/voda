@@ -60,6 +60,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.14.3",
     "@popperjs/core": "^2.11.2",
     "@splidejs/splide-extension-grid": "^0.4.1",
     "bootstrap-icons": "^1.8.1",
