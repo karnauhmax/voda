@@ -28,10 +28,14 @@
     box-shadow: 0px 4px 18px rgba(148, 213, 253, 0.3),
       0px 1px 40px rgba(206, 236, 255, 0.2);
     backdrop-filter: blur(52px);
-    transition: filter .5s ease;
+    transition: all .5s ease;
 
     &:hover {
-      filter: drop-shadow(0px 1px 14px rgba(49, 50, 51, 0.5));
+      background-color: var(--white);
+      border: 1px solid #7DC1F8;
+
+      color: #7DC1F8;
+      ;
     }
 
     @media screen and (max-width: 1366px) {

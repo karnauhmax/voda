@@ -95,6 +95,7 @@
     font-weight: 500;
     color: var(--white);
     margin-bottom: 5px;
+    outline: 0;
 
     &.is-invalid {
       border: 1px solid #FF0404;

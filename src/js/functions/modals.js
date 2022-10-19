@@ -26,7 +26,7 @@ class Modal {
     });
 
     this.modalContainer.addEventListener("click", (e) => {
-      if (e.target == this.modalWrapper) {
+      if (e.target == this.modalWrapper || e.target.code === "ESCAPE") {
         closeModal();
       }
     });

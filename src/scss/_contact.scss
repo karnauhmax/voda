@@ -67,6 +67,7 @@
     flex-direction: column;
 
     & input {
+
       @media screen and (max-width: 1366px) {
         padding: 27px 15px;
       }
