@@ -9,6 +9,7 @@
   opacity: 0;
   background: rgba(0, 0, 0, 0.5);
   overflow-y: auto;
+  z-index: 100000;
 
   &.modal__active {
     visibility: visible;
@@ -124,4 +125,8 @@
       font-weight: 300;
     }
   }
+}
+
+.modal__success-item {
+  justify-content: center;
 }

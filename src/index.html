@@ -42,19 +42,19 @@
             </h2>
             <div class="info__stats-inner">
               <div class="info__stats-item">
-                <p class="info__stats-num info__stats-machines">700</p>
+                <p class="info__stats-num info__stats-machines"><span data-content="700">0</span></p>
                 <p class="info__stats-descr">автоматів</p>
               </div>
               <div class="info__stats-item">
-                <p class="info__stats-num  info__stats-cities">50</p>
+                <p class="info__stats-num  info__stats-cities"><span data-content="50">0</span></p>
                 <p class="info__stats-descr">міст</p>
               </div>
               <div class="info__stats-item">
-                <p class="info__stats-num  info__stats-partners">150+</p>
+                <p class="info__stats-num  info__stats-partners"><span data-content="150">0</span>+</p>
                 <p class="info__stats-descr">партнерів</p>
               </div>
               <div class="info__stats-item">
-                <p class="info__stats-num info__stats-hours">24</p>
+                <p class="info__stats-num info__stats-hours"><span data-content="24">0</span></p>
                 <p class="info__stats-descr">години на день</p>
               </div>
             </div>
@@ -480,6 +480,7 @@
                 <div class="info__stages-img ibg">
                   <img class="bordered-left-img" src="img/water.jpg" alt="Water">
                 </div>
+                <img src="img/big-teardrop.png" class="info__stages-teardrop" width="216" height="328" alt="Teardrop">
               </div>
               <div class="info__stages-info">
                 <h3 class="info__stages-title" data-da=".info__stages-media, 992, first">
@@ -879,6 +880,8 @@
         </div>
       </section>
       <!-- service -->
+
+      <!-- benefits -->
 
       <section class="benefits">
         <div class="container">
@@ -1554,6 +1557,8 @@
         </div>
       </section>
 
+      <!-- benefits -->
+
       <!-- partners slider -->
       <div class="partners">
         <div class="splide partners__slider" role="group" aria-label="Splide Basic HTML Example">
@@ -1593,11 +1598,11 @@
                 <div class="form__inner">
                   <div class="contact__inputs">
                     <label class="contact__label">
-                      <input class="modal__input input-reset  contact__name" type="text" name="name__input"
+                      <input class="modal__input input-reset  contact__name" type="text" name="Ім'я"
                         placeholder="Ваше ім’я">
                     </label>
                     <label class="modal__label">
-                      <input class="modal__input input-reset  contact__phone" type="tel" name="tel__input"
+                      <input class="modal__input input-reset  contact__phone" type="tel" name="Номер телефону"
                         placeholder="Ваш номер телефону">
                     </label>
                   </div>
@@ -1801,11 +1806,11 @@
           <form class="modal__form main-form form" action="#" method="post">
             <div class="modal__inputs contact__inputs">
               <label class="modal__label">
-                <input class="modal__input input-reset modal__name contact__name" type="text" name="name__input"
+                <input class="modal__input input-reset modal__name contact__name" type="text" name="Ім'я"
                   placeholder="Ваше ім’я">
               </label>
               <label class="modal__label">
-                <input class="modal__input input-reset modal__phone contact__phone" type="tel" name="tel__input"
+                <input class="modal__input input-reset modal__phone contact__phone" type="tel" name="Номер телефону"
                   placeholder="Ваш номер телефону">
               </label>
             </div>
@@ -1815,6 +1820,19 @@
       </div>
     </div>
     <!-- modal -->
+
+    <!-- success -->
+    <div class="modal success-modal">
+      <div class="modal__inner">
+        <div class="modal__item modal__success-item">
+          <button class="modal__close" data-modal-close>
+          </button>
+          <p class="modal__text">Дякуємо!
+            Очікуйте дзвінка від менеджера</p>
+        </div>
+      </div>
+    </div>
+    <!-- success -->
 
     @include('partials/footer.html')
   </div>

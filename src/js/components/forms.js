@@ -1,6 +1,7 @@
 import { validateForms } from "../functions/validate-forms";
+import { contactModal, successModal } from "./modals";
 
-const rules1 = [
+const contactRules = [
   {
     ruleSelector: ".contact__name",
     rules: [
@@ -18,7 +19,7 @@ const rules1 = [
   {
     ruleSelector: ".contact__phone",
     tel: true,
-    telError: "Введите корректный телефон",
+    telError: "Введіть корректний номер телефону",
     rules: [
       {
         rule: "required",
@@ -29,9 +30,45 @@ const rules1 = [
   },
 ];
 
-const afterForm = () => {
-  console.log("Произошла отправка, тут можно писать любые действия");
+const modalRules = [
+  {
+    ruleSelector: ".contact__name",
+    rules: [
+      {
+        rule: "minLength",
+        value: 3,
+      },
+      {
+        rule: "required",
+        value: true,
+        errorMessage: "Введіть ваше ім’я",
+      },
+    ],
+  },
+  {
+    ruleSelector: ".contact__phone",
+    tel: true,
+    telError: "Введіть корректний номер телефону",
+    rules: [
+      {
+        rule: "required",
+        value: true,
+        errorMessage: "Введіть ваш телефон",
+      },
+    ],
+  },
+];
+
+const contactAfterForm = () => {
+  successModal.openModal();
+  document.body.classList.remove("loading");
 };
 
-validateForms(".main-form", rules1, afterForm);
-validateForms(".modal__form", rules1, afterForm);
+const modalAfterForm = () => {
+  contactModal.closeModal();
+  successModal.openModal();
+  document.body.classList.remove("loading");
+};
+
+validateForms(".contact__form", contactRules, contactAfterForm);
+validateForms(".modal__form", modalRules, modalAfterForm);

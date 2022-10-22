@@ -232,3 +232,42 @@ a {
     transform: translate(-50%, -50%);
   }
 }
+
+button[type=submit] {
+  background-repeat: no-repeat;
+}
+
+body.loading {
+  button[type=submit] {
+    position: relative;
+    font-size: 0;
+    // pointer-events: none;
+    cursor: wait;
+    opacity: 0.5;
+    min-height: 70px;
+
+
+    &::before {
+      content: "";
+      border: 8px solid #d3caca;
+      animation: spin 2s linear infinite;
+      /* Light grey */
+      border-top: 8px solid #0a90e9;
+      /* Blue */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 2s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

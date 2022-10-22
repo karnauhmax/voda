@@ -17,19 +17,31 @@ class Modal {
       document.body.classList.remove("locked");
     };
 
-    this.modalOpen.forEach((e) => {
-      e.addEventListener("click", openModal);
-    });
+    if (this.modalOpen) {
+      this.modalOpen.forEach((e) => {
+        e.addEventListener("click", openModal);
+      });
+    }
 
-    this.modalClose.forEach((e) => {
-      e.addEventListener("click", closeModal);
-    });
+    if (this.modalClose) {
+      this.modalClose.forEach((e) => {
+        e.addEventListener("click", closeModal);
+      });
+    }
 
     this.modalContainer.addEventListener("click", (e) => {
       if (e.target == this.modalWrapper || e.target.code === "ESCAPE") {
         closeModal();
       }
     });
+  }
+
+  closeModal() {
+    this.modalContainer.classList.remove("modal__active");
+  }
+
+  openModal() {
+    this.modalContainer.classList.add("modal__active");
   }
 }
 

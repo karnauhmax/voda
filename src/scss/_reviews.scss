@@ -37,6 +37,10 @@
     border-radius: var(--radius-15);
     padding: 30px;
     gap: 18px;
+
+    @media screen and (max-width: 992px) {
+      height: unset;
+    }
   }
 
 

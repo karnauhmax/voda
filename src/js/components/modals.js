@@ -1,3 +1,8 @@
 import Modal from "../functions/modals";
 
-new Modal(".contact-modal", "[data-contact]").renderModal();
+const contactModal = new Modal(".contact-modal", "[data-contact]");
+contactModal.renderModal();
+const successModal = new Modal(".success-modal");
+successModal.renderModal();
+
+export { Modal, contactModal, successModal };
