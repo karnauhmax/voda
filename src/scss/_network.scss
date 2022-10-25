@@ -27,7 +27,7 @@
 
   #map {
     background-color: grey;
-    grid-column: 1 / 9;
+    grid-column: span 12;
     grid-row: span 3;
 
     @media screen and (max-width: 992px) {
@@ -116,6 +116,7 @@
   .own-hint {
     grid-column: 9 / 13;
     grid-row: 1 / 2;
+    display: none;
 
     &::before {
       background-image: url("../img/teardrop-in-circle.svg");
@@ -130,6 +131,7 @@
   .partner-hint {
     grid-column: 9 / 13;
     grid-row: 2 / 3;
+    display: none;
 
     @media screen and (max-width: 992px) {
       grid-column: unset;
@@ -142,10 +144,11 @@
   }
 
   &__btn {
-    grid-column: 9 / 13;
-    grid-row: 3 / 4;
+    grid-column: span 12;
+    grid-row: 4/5;
     max-width: 100%;
     font-size: 24px;
+    justify-self: center;
 
     @media screen and (max-width: 1366px) {
       font-size: 20px;
