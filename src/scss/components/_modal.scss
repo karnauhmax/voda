@@ -130,3 +130,22 @@
 .modal__success-item {
   justify-content: center;
 }
+
+.review-modal .review__area {
+  width: 100%;
+  resize: none;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  min-height: 80px;
+  font-family: var(--font-family-primary);
+  padding: 15px;
+  color: var(--white);
+  outline: 0;
+  &.is-invalid {
+    border: 1px solid #FF0404;
+  }
+  &::placeholder {
+    color: var(--white);
+  }
+}

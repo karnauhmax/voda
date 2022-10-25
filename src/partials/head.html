@@ -4,9 +4,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
   <title>Voda-Box</title>
+  <link rel="preload" href="img/offer-bg.jpg" as="image">
+  <link rel="preload" href="img/box.png" as="image">
+  <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Montserrat-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MontserratAlternates-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MontserratAlternates-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MontserratAlternates-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MontserratAlternates-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MontserratAlternates-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
-  <!-- <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-  </script> -->
-  <script defer src="js/main.js"></script>
+  <script>
+    let isAsyncLoaded = false;
+
+    function createScript() {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "./js/main.js";
+      document.head.appendChild(script);
+      console.log(isAsyncLoaded);
+    }
+
+    function createCss() {
+      const style = document.createElement("link");
+      style.rel = "stylesheet";
+      style.href = "css/vendor.css";
+      document.head.appendChild(style);
+      console.log(isAsyncLoaded);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if(!isAsyncLoaded) {createCss();createScript(); isAsyncLoaded = true}}, {once: true
+    })
+
+  </script>
 </head>

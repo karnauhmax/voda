@@ -2,23 +2,6 @@
   margin-top: -60px;
   position: relative;
 
-  &::before {
-    content: "";
-    width: 475px;
-    height: 527px;
-    background: rgba(18, 149, 238, 0.5);
-    filter: blur(150px);
-    position: absolute;
-    left: 0;
-    top: 20%;
-    transform: translateX(-40%);
-    z-index: -1;
-
-    @media screen and (max-width: 1440px) {
-      display: none;
-    }
-  }
-
   @media screen and (max-width: 768px) {
     padding-top: 30px;
     margin-top: -31px;
@@ -55,22 +38,41 @@
     &-inner {
       display: grid;
       grid-template-columns: 235px 153px 273px 200px;
-      // grid-template-columns: repeat(4, minmax(auto, 350px));
       column-gap: 135px;
       row-gap: 65px;
       max-width: 1265px;
+      position: relative;
 
-      @media screen and (max-width: 1100px) {
-        column-gap: 65px;
-        grid-template-columns: repeat(4, minmax(auto, 350px));
+      &::before {
+        content: "";
+        width: 475px;
+        height: 527px;
+        background: rgba(18, 149, 238, 0.5);
+        filter: blur(150px);
+        position: absolute;
+        left: 0;
+        top: 10%;
+        transform: translateX(-80%);
+        z-index: -1;
+
+        @media screen and (max-width: 1440px) {
+          display: none;
+        }
       }
 
-      @media screen and (max-width: 992px) {
+      @media screen and (max-width: 1366px) {
         column-gap: 35px;
+        grid-template-columns: 180px 153px 220px 200px;
+      }
+
+      @media screen and (max-width: 1200px) {
+      }
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       @media screen and (max-width: 767px) {
-        grid-template-columns: repeat(2, 1fr);
       }
 
       @media screen and (max-width: 576px) {
@@ -85,8 +87,9 @@
       display: grid;
       grid-auto-flow: row;
       gap: 25px;
+      min-height: 137px;
 
-      @media screen and (max-width: 1600) {
+      @media screen and (max-width: 1600px) {
         gap: 20px;
       }
 
@@ -108,6 +111,7 @@
       font-family: var(--font-family-secondary);
       font-weight: 700;
       line-height: 1;
+      min-height: 70px;
 
       @media screen and (max-width: 1600px) {
         font-size: 90px;

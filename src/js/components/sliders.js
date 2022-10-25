@@ -24,16 +24,13 @@ if (document.querySelector(".income__slider")) {
     padding: { right: "150px" },
     gap: "30px",
     autoplay: true,
-    speed: 4000,
+    speed: 3000,
     breakpoints: {
       1366: {
         perPage: 3,
       },
       992: {
         perPage: 2,
-      },
-      768: {
-        // padding: { right: "500px" },
       },
     },
   }).mount();

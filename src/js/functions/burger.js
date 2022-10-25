@@ -13,18 +13,18 @@ import { enableScroll } from '../functions/enable-scroll';
 
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
-      burger?.setAttribute('aria-label', 'Закрыть меню');
+      burger?.setAttribute('aria-label', 'Закрити меню');
       disableScroll();
     } else {
       burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Открыть меню');
+      burger?.setAttribute('aria-label', 'Відкрити меню');
       enableScroll();
     }
   });
 
   overlay?.addEventListener('click', () => {
     burger?.setAttribute('aria-expanded', 'false');
-    burger?.setAttribute('aria-label', 'Открыть меню');
+    burger?.setAttribute('aria-label', 'Відкрити меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
     enableScroll();

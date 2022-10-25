@@ -6,6 +6,10 @@
   @include adaptiv-value(padding-top, 125, 51, 1);
   @include adaptiv-value(padding-bottom, 320, 40, 1);
 
+  @media screen and (min-width: 1920px) {
+    background-position: bottom center;
+  }
+
   @media screen and (max-width: 1366px) {
     @include adaptiv-value(padding-bottom, 120, 50, 1);
   }
@@ -21,7 +25,8 @@
 
   &__inner {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    // grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 30px;
 
@@ -31,10 +36,11 @@
   }
 
   &__img {
+    grid-column: 2/3;
+    grid-row: 1/3;
     display: block;
     padding-bottom: 100%;
     width: 100%;
-    grid-column: 7 / 13;
     transform: scale(1.6);
     transform-origin: 50% 30%;
     align-self: start;
@@ -57,7 +63,8 @@
 
     @media screen and (max-width: 768px) {
       align-self: end;
-
+      grid-row: 2/3;
+      grid-column: 1/2;
     }
 
     @media screen and (max-width: 576px) {
@@ -87,12 +94,12 @@
   }
 
   &__title {
+    display: grid;
     font-family: var(--font-family-secondary);
     font-weight: 700;
     @include adaptiv-value(font-size, 160, 50, 1);
     @include line-height(160, 144);
     color: var(--white);
-    @include adaptiv-value(margin-bottom, 28, 14, 1);
 
     @media screen and (max-width: 1600px) {
       font-size: 110px;
@@ -102,11 +109,8 @@
       font-size: 80px;
     }
 
-    @media screen and (max-width: 768px) {
-      margin-bottom: 45px;
-    }
-
     @media screen and (max-width: 576px) {
+      margin-bottom: 45px;
       font-size: 60px;
     }
 
@@ -137,12 +141,20 @@
   }
 
   &__text {
-    max-width: 539px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-column: 1/2;
+    grid-row: 2/3;
     @include adaptiv-value(font-size, 24, 16, 1);
+    @include adaptiv-value(row-gap, 30, 15, 1);
     @include line-height(24, 33);
-    @include adaptiv-value(margin-bottom, 30, 15, 1);
     color: var(--white);
     font-weight: 600;
+    align-self: start;
+
+    & p {
+      max-width: 539px;
+    }
 
     @media screen and (max-width: 1600px) {
       font-size: 20px;
@@ -154,10 +166,13 @@
 
     @media screen and (max-width: 768px) {
       font-size: 16px;
+      grid-row: 3/4;
     }
 
-    @media screen and (max-width: 576px) {
-      max-width: 300px;
+    @media screen and (max-width: 360px) {
+      & p {
+        max-width: 300px;
+      }
     }
   }
 

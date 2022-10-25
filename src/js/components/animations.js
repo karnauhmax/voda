@@ -9,7 +9,6 @@ function infoStages() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".info__stages",
-      // markers: true,
       start: "top 80%",
       end: "bottom 70%",
       scrub: 1,
@@ -36,7 +35,6 @@ function infoNums() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".info__stats",
-      // markers: true,
       start: "top 25%",
       end: "bottom 100%",
       once: true,
@@ -50,7 +48,6 @@ function income() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".income",
-      // markers: true,
       start: "top 40%",
       end: "bottom 50%",
     },
@@ -63,7 +60,6 @@ function benefits() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".reasons",
-      markers: true,
       start: "top 30%",
       end: "bottom 50%",
     },
