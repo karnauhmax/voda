@@ -78,7 +78,10 @@
     }
 
     &-viber {
-      pointer-events: none;
+      cursor: not-allowed;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 
