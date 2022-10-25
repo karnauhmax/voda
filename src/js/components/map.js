@@ -72,3 +72,4 @@ const markers = [
 markers.forEach((marker) => {
   L.marker([marker.x, marker.y]).addTo(map);
 });
+

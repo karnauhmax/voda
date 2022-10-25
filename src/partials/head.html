@@ -22,20 +22,12 @@
     function createScript() {
       var script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = "./js/main.js";
+      script.src = "js/main.js";
       document.head.appendChild(script);
-    }
-
-    function createCss() {
-      const style = document.createElement("link");
-      style.rel = "stylesheet";
-      style.href = "css/vendor.css";
-      document.head.appendChild(style);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
       if (!isAsyncLoaded) {
-        createCss();
         createScript();
         isAsyncLoaded = true
       }
