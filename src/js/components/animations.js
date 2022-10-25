@@ -35,7 +35,7 @@ function infoNums() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".info__stats",
-      start: "top 25%",
+      start: "top 50%",
       end: "bottom 100%",
       once: true,
     },

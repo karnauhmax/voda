@@ -24,7 +24,6 @@
       script.type = "text/javascript";
       script.src = "./js/main.js";
       document.head.appendChild(script);
-      console.log(isAsyncLoaded);
     }
 
     function createCss() {
@@ -32,11 +31,16 @@
       style.rel = "stylesheet";
       style.href = "css/vendor.css";
       document.head.appendChild(style);
-      console.log(isAsyncLoaded);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      if(!isAsyncLoaded) {createCss();createScript(); isAsyncLoaded = true}}, {once: true
+      if (!isAsyncLoaded) {
+        createCss();
+        createScript();
+        isAsyncLoaded = true
+      }
+    }, {
+      once: true
     })
 
   </script>
