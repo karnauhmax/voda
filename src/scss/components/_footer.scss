@@ -37,9 +37,7 @@
     &:hover {
       background-color: var(--white);
       border: 1px solid #7DC1F8;
-
       color: #7DC1F8;
-      ;
     }
 
     @media screen and (max-width: 1366px) {
@@ -75,6 +73,10 @@
       @media screen and (max-width: 767px) {
         grid-column: span 2;
       }
+    }
+
+    &-viber {
+      pointer-events: none;
     }
   }
 
