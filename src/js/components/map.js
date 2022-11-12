@@ -1,10 +1,32 @@
 import "leaflet";
-let map = L.map("map").setView([50.4593414, 30.3564828], 11);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 15,
-  attribution:
-    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
+
+const pageMap = document.getElementById("map");
+let map = L.map(pageMap).setView([49.286439, 32.0851211], 5.5);
+
+const mapObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("Intersected!");
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 15,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
+        observer.unobserve(entry.target);
+
+        markers.forEach((marker) => {
+          L.marker([marker.x, marker.y]).addTo(map);
+        });
+      }
+    });
+  },
+  {
+    rootMargin: "70px 0px 70px 0px",
+  }
+);
+
+mapObserver.observe(pageMap);
 
 const markers = [
   {
@@ -67,8 +89,116 @@ const markers = [
     x: 50.4259634,
     y: 30.3343956,
   },
+  {
+    x: 50.4535914,
+    y: 30.6015452,
+  },
+  {
+    x: 50.280807,
+    y: 28.619435,
+  },
+  {
+    x: 50.2439513,
+    y: 28.6218667,
+  },
+  {
+    x: 50.245527,
+    y: 28.7059196,
+  },
+  {
+    x: 49.2439233,
+    y: 28.4750384,
+  },
+  {
+    x: 49.227228,
+    y: 28.4029686,
+  },
+  {
+    x: 49.220746,
+    y: 28.4150661,
+  },
+  {
+    x: 49.4099755,
+    y: 26.9631338,
+  },
+  {
+    x: 49.4217564,
+    y: 26.9845112,
+  },
+  {
+    x: 48.7466525,
+    y: 30.2186021,
+  },
+  {
+    x: 48.7552536,
+    y: 30.2157644,
+  },
+  {
+    x: 48.5010152,
+    y: 32.2457558,
+  },
+  {
+    x: 48.4971985,
+    y: 32.260616,
+  },
+  {
+    x: 48.5199463,
+    y: 32.2823896,
+  },
+  {
+    x: 50.587392,
+    y: 27.6192694,
+  },
+  {
+    x: 50.616093,
+    y: 26.2675613,
+  },
+  {
+    x: 50.616093,
+    y: 26.2675613,
+  },
+  {
+    x: 49.9044793,
+    y: 28.5802021,
+  },
+  {
+    x: 51.48619,
+    y: 31.27881,
+  },
+  {
+    x: 51.5144286,
+    y: 31.310196,
+  },
+  {
+    x: 51.0342258,
+    y: 31.8766031,
+  },
+  {
+    x: 49.9505539,
+    y: 36.2586656,
+  },
+  {
+    x: 48.5401307,
+    y: 35.8711893,
+  },
+  {
+    x: 48.5245378,
+    y: 35.8689666,
+  },
+  {
+    x: 47.5769585,
+    y: 34.3517154,
+  },
+  {
+    x: 46.8710732,
+    y: 35.3793615,
+  },
+  {
+    x: 46.9589749,
+    y: 32.0294854,
+  },
+  {
+    x: 46.9683625,
+    y: 32.0022282,
+  },
 ];
-
-markers.forEach((marker) => {
-  L.marker([marker.x, marker.y]).addTo(map);
-});

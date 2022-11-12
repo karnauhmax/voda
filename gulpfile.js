@@ -275,26 +275,8 @@ const htmlInclude = () => {
         locale: ["ru", "en-US"],
       })
     )
-    .pipe(webphtml())
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
-};
-
-const criticalCss = (done) => {
-  // return src(buildFolder).pipe(() => {
-  //   critical.generate({
-  //     base: buildFolder,
-  //     src: "index.html",
-  //     dest: "app/index-critical.html",
-  //     minify: true,
-  //     width: 320,
-  //     height: 480,
-  //   });
-
-  //   done();
-  // });
-
-  return src(buildFolder);
 };
 
 const watchFiles = () => {
@@ -380,11 +362,11 @@ const getCritical = (done) => {
     // - false generates CSS
     inline: true,
     // Your base directory
-    base: 'app/',
+    base: "app/",
     // HTML source file
-    src: 'index.html',
+    src: "index.html",
     // Your CSS Files (optional)
-    css: ['css/main.css'],
+    css: ["css/main.css"],
     // Viewport width
     width: 1300,
     // Viewport height
@@ -392,20 +374,20 @@ const getCritical = (done) => {
     // Output results to file
     target: {
       // css: 'critical.css',
-      html: 'index.html',
+      html: "index.html",
       // uncritical: 'css/uncritical.css',
     },
     // Extract inlined styles from referenced stylesheets
     extract: true,
     // ignore CSS rules
     ignore: {
-      atrule: ['@font-face'],
+      atrule: ["@font-face"],
       // rule: [/some-regexp/],
       // decl: (node, value) => /big-image\.png/.test(value),
     },
   });
   done();
-}
+};
 
 exports.default = series(
   clean,

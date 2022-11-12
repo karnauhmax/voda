@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://vodabox.com.ua/sitemap.xml

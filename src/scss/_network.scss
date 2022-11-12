@@ -8,10 +8,10 @@
   &__inner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 125px);
+    grid-template-rows: repeat(3, 150px);
     gap: 30px;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 992px) {
       grid-template-rows: repeat(3, 100px);
     }
 
@@ -31,6 +31,7 @@
     background-color: grey;
     grid-column: span 12;
     grid-row: span 3;
+    // min-height: 437px;
 
     @media screen and (max-width: 992px) {
       grid-column: span 2;

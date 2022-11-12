@@ -76,13 +76,6 @@
         grid-column: span 2;
       }
     }
-
-    &-viber {
-      cursor: not-allowed;
-      &:hover {
-        opacity: 0.5;
-      }
-    }
   }
 
   &__inner {

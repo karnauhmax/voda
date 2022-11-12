@@ -25,6 +25,7 @@ if (document.querySelector(".income__slider")) {
     gap: "30px",
     autoplay: true,
     speed: 3000,
+    lazyLoad: "sequential",
     breakpoints: {
       1366: {
         perPage: 3,
@@ -43,6 +44,7 @@ if (document.querySelector(".gallery__slider")) {
     gap: "30px",
     arrows: false,
     pagination: false,
+    lazyLoad: "sequential",
     grid: {
       rows: 2,
       cols: 2,
