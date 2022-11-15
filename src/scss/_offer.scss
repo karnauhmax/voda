@@ -1,10 +1,14 @@
 .offer {
-  background-image: url("../img/offer-bg.jpg");
+  background-image: url("../img/offer-bg-desktop.jpg");
   background-color: var(--accent);
   background-repeat: no-repeat;
   background-size: cover;
   @include adaptiv-value(padding-top, 125, 51, 1);
   @include adaptiv-value(padding-bottom, 320, 40, 1);
+
+  @media screen and (max-width: 767px) {
+    background-image: url("../img/offer-bg.jpg");
+  }
 
   @media screen and (min-width: 1920px) {
     background-position: bottom center;
@@ -41,30 +45,13 @@
     display: block;
     padding-bottom: 100%;
     width: 100%;
-    transform: scale(1.2);
     transform-origin: 50% 30%;
     align-self: start;
-
-    @media screen and (max-width: 1366px) {
-      transform: scale(1.1);
-    }
-
-    @media screen and (max-width: 1200px) {
-      transform: scale(1);
-    }
-
-    @media screen and (max-width: 992px) {
-      transform-origin: 50% 120%;
-    }
 
     @media screen and (max-width: 768px) {
       align-self: end;
       grid-row: 2/3;
       grid-column: 1/2;
-    }
-
-    @media screen and (max-width: 576px) {
-      transform: scale(1.2);
     }
 
     @media screen and (max-width: 360px) {
